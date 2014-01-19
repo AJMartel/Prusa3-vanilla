@@ -15,14 +15,19 @@ module small_gear()
 
 		translate ([30,0,0])
 		difference(){
-			rotate ([0,0,360*-1/20]) gear (number_of_teeth=8,
-			circular_pitch=335,rim_thickness=20,bore_diameter=0,hub_thickness=0);
+			rotate ([0,0,360*-1/20]) 
+				gear (number_of_teeth = 8,
+					  circular_pitch = 335,
+					  rim_thickness = 15,
+                       bore_diameter = 5.2,
+                       hub_diameter = 20,
+                       hub_thickness = 17,
+					  gear_thickness = 8);
 
-
-			difference(){ 
-				translate ([0,0,-1]) cylinder(r=5/2, h=25, $fn=30);
-				translate ([-5,1.5,0])cube([10,10,30]);
-			}
+			translate([-3.25,4.25,9]) 
+                 cube([6.5,3.2,9]);
+			translate([0,0,9+3.5]) rotate([-90,0,0]) 
+				cylinder(r=1.75, h=20, $fn=10);
 		}
 	}
 }
