@@ -13,8 +13,7 @@ STLS = $(foreach part, $(PARTS),$(OUTPUT_DIR)/$(part).stl)
 all: $(STLS)
 
 clean:
-	-rm -f $(OUTPUT_DIR)/*.stl
-	-rm -f $(OUTPUT_DIR)/*.stl.deps
+	-rm -Rf $(OUTPUT_DIR)
 
 $(OUTPUT_DIR)/%.stl : src/%.scad
 	mkdir -p $(OUTPUT_DIR)
