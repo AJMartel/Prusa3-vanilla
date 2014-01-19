@@ -35,4 +35,7 @@ module small_gear() {
 
 
 big_gear();
-small_gear();
+
+// Temporary, for printing
+translate([8,0,17]) rotate([180,0,0]) 
+	small_gear();
