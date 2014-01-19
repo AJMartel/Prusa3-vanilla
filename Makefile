@@ -2,8 +2,8 @@
 PARTS= x-carriage x-end-motor x-end-idler \
 	   y-corners y-motor y-idler \
 	   z-axis-top z-axis-bottom \
-	   extruder-small-gear extruder-big-gear extruder-idler \
-	   belt-guide
+	   extruder-small-gear extruder-big-gear \
+	   extruder-idler extruder-block belt-guide
 
 OPENSCAD=openscad
 
