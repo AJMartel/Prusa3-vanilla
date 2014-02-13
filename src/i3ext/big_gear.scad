@@ -1,4 +1,4 @@
-include <gear_script.scad>;
+include <inc/gear_script.scad>;
 
 module big_gear() {
 	difference() {
