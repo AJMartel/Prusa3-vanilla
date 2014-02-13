@@ -7,6 +7,8 @@
 
 //include <configuration.scad>
 
+$fn=20;
+
 module y_motor_base(){
  // Motor holding part
  translate(v = [29,-21+50,0]){
