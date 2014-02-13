@@ -24,7 +24,7 @@ module small_gear() {
 					 hub_thickness=17,
 					 hub_diameter=18.5,
 					 gear_thickness=8,
-					 bore_diameter=6.4
+					 bore_diameter=5.4
 					 );
 			translate([-3.25,3.75,9]) cube([6.5,3.2,9]);
 			translate([0,0,9+3.5]) rotate([-90,0,0]) 
@@ -34,8 +34,8 @@ module small_gear() {
 }
 
 
-big_gear();
+//big_gear();
 
 // Temporary, for printing
-translate([8,0,17]) rotate([180,0,0]) 
+translate([5,0,17]) rotate([180,0,0]) 
 	small_gear();
