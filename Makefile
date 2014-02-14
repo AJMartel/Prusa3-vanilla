@@ -1,6 +1,6 @@
 
 PARTS= x-carriage x-end-motor x-end-idler \
-	   y-corners y-motor y-idler \
+	   y-corners y-motor y-idler y-belt-holder \
 	   z-axis-top z-axis-bottom \
 	   belt-guide \
 	   i3ext/small_gear i3ext/big_gear \
