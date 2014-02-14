@@ -7,8 +7,8 @@
 
 
 module belt_holder_base(){
- translate([-33-8.5,0,-1]) cube([33,15,16]); 
- translate([-33-8.5,11,-1]) cube([33,15,16]);
+ translate([-33-8.5,0,-1]) cube([33.5,15,16]); 
+ translate([-33-8.5,11,-1]) cube([33.5,15,16]);
  translate([-50,22,-1]) cube([50,4,16]);	
 }
 
@@ -18,10 +18,15 @@ module belt_holder_beltcut(){
  translate([-66,-0.5+10,3]) cube([67,1,15]);
  // Smooth insert cutout
  translate([-66,-0.5+10,12]) rotate([45,0,0]) cube([67,15,15]);
+
  // Individual teeth
- for ( i = [0 : 23] ){
-  translate([0-i*3+position_tweak,-0.5+8,3]) cube([1.7,3,15]);
+ for (i = [0 : 23]) {
+    // GT2 variant
+    translate([0 - i*2, -0.5 + 8, 3]) cube([1, 3, 15]);
+    // original 
+    // translate([0-i*3+position_tweak,-0.5+8,3]) cube([1.7,3,15]);
  }
+
  // Middle opening
  translate([-2-25,-1,3]) cube([4,11,15]);	
 }
