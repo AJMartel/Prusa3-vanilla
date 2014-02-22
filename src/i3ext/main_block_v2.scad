@@ -182,11 +182,11 @@ difference(){
 		translate([-15,0,12]) rotate([0,-55,0]) cube(size=[12,30,15]);
 	} 
 
-	// FIXME: had to add -0.01 for stl export to stop complaining!
+	// FIXME: had to add 0.01 for stl export to stop complaining!
 	// 625zz filament drive bearing cutouts from drivetrain block
-	translate([21, 9 - 0.9 - 0.01, -1]) cylinder(r=8.1, h=6); 
+	translate([21, 9 - 0.9 + 0.01, -1]) cylinder(r=8.1, h=6); 
 		%translate([21,9-0.9,-1]) cylinder(r=8.1, h=5); // visualize it
-	translate([21, 9 - 0.9 - 0.01 , -5 + 52 - 4]) cylinder(r=8.1, h=8.5); 
+	translate([21, 9 - 0.9 + 0.01 , -5 + 52 - 4]) cylinder(r=8.1, h=8.5); 
 		%translate([21,9-0.9,-5+52-4]) cylinder(r=8.1, h=5); // visualize it
 
 	// filament drive bearing insert cutouts from drivetrain block
