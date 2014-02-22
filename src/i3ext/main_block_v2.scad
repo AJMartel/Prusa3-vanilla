@@ -2,6 +2,8 @@
 bearing diameter 16mm
 */
 
+$fn = 32;
+
 hobb = 7; 					// use 6 if using Prusa's hobbed pulley - DOES NOT WORK!
 //mount_spacing = 30; 		// use 30 if using the newer, 30mm hole x-carriage
 mount_spacing = 24; 			// use 30 if using the newer, 30mm hole x-carriage
@@ -180,10 +182,11 @@ difference(){
 		translate([-15,0,12]) rotate([0,-55,0]) cube(size=[12,30,15]);
 	} 
 
+	// FIXME: had to add -0.01 for stl export to stop complaining!
 	// 625zz filament drive bearing cutouts from drivetrain block
-	translate([21,9-0.9,-1]) cylinder(r=8.1, h=6); 
+	translate([21, 9 - 0.9 - 0.01, -1]) cylinder(r=8.1, h=6); 
 		%translate([21,9-0.9,-1]) cylinder(r=8.1, h=5); // visualize it
-	translate([21,9-0.9,-5+52-4]) cylinder(r=8.1, h=8.5); 
+	translate([21, 9 - 0.9 - 0.01 , -5 + 52 - 4]) cylinder(r=8.1, h=8.5); 
 		%translate([21,9-0.9,-5+52-4]) cylinder(r=8.1, h=5); // visualize it
 
 	// filament drive bearing insert cutouts from drivetrain block
@@ -221,15 +224,15 @@ difference(){
 		// idler bolts
 		if (drive=="back" || drive=="both") {
 			translate([5+32,-1,52-12+7]) rotate([0,90,90]) 
-				rotate([0,0,30]) cylinder(r=2, h=40, $fn=6);
+				rotate([0,0,30]) cylinder(r=2, h=40, $fn=32);
 			translate([5+32,-1,52-12-7]) rotate([0,90,90]) 
-				rotate([0,0,30]) cylinder(r=2, h=40, $fn=6);
+				rotate([0,0,30]) cylinder(r=2, h=40, $fn=32);
 		}
 		if (drive=="front" || drive=="both") {
 			translate([5+32,-1,52-12-25+7]) rotate([0,90,90]) 
-				rotate([0,0,30]) cylinder(r=2, h=40, $fn=6);
+				rotate([0,0,30]) cylinder(r=2, h=40, $fn=32);
 			translate([5+32,-1,52-12-25-7]) rotate([0,90,90]) 
-				rotate([0,0,30]) cylinder(r=2, h=40, $fn=6);
+				rotate([0,0,30]) cylinder(r=2, h=40, $fn=32);
 		}
 
 		// pretty cutout - angled idler area corners
@@ -238,8 +241,8 @@ difference(){
 
 		// pretty cutout - angled base underneath NEMA17 motor
 		translate([-10,-66,0]) rotate([-23,0,0]) cube([12,20,90]);
-		}
 	}
+}
 
 // M5 bolt support
 if (drive != "both") {
