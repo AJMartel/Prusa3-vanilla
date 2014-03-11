@@ -32,15 +32,19 @@ module m8rod(){
 	}
 }
 
+module SwitchCutout() {
+	// Switch
+	translate([-15, 2, 4]) cube([13.2, 5.9, 10]);
+
+	// tie holes
+	translate([-16.5, -3.5, 4]) cube([1.7, 10, 3]);
+	translate([-15+13.2, -3.5, 4]) cube([1.7, 10, 3]);
+}
+
 module MSwitchMount(){
-	union(){
-		difference() {
-			translate([0,0,5]) cube(size=[4, 20, 20], center=true);
-			translate([0, 4.75, 7.2]) rotate([0,90,0]) cylinder(r=1.3, h=10, center=true);
-			translate([0, -4.75, 7.2]) rotate([0,90,0]) cylinder(r=1.3, h=10, center=true);
-		}
-		translate([5, 4.75, 0]) cube(size=[7, 3, 10], center=true);
-		translate([5, -4.75, 0]) cube(size=[7, 3, 10], center=true);
+	difference() {
+		translate([2,0,5]) cube(size=[6, 20, 20], center=true);
+		translate([-1, -7.5, 6]) rotate([0, 0, -90]) SwitchCutout();	
 	}
 }
 
