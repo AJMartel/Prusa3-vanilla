@@ -5,7 +5,7 @@ PARTS= x-carriage x-end-motor x-end-idler \
 	   belt-guide \
 	   i3ext/small_gear i3ext/big_gear \
        i3ext/main_block_v2 i3ext/idler \
-	   endstops/endstop-holder-xz
+	   endstops/endstop-holder-xz endstops/endstop-holder-y
 
 OPENSCAD=openscad
 
