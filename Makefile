@@ -4,7 +4,8 @@ PARTS= x-carriage x-end-motor x-end-idler \
 	   z-axis-top z-axis-bottom \
 	   belt-guide \
 	   i3ext/small_gear i3ext/big_gear \
-       i3ext/main_block_v2 i3ext/idler
+       i3ext/main_block_v2 i3ext/idler \
+	   endstops/endstop-holder-xz
 
 OPENSCAD=openscad
 
@@ -20,6 +21,7 @@ clean:
 $(OUTPUT_DIR)/%.stl : src/%.scad
 	mkdir -p $(OUTPUT_DIR)
 	mkdir -p $(OUTPUT_DIR)/i3ext
+	mkdir -p $(OUTPUT_DIR)/endstops
 	$(OPENSCAD) -m make -o $@ -d $@.deps $<
 
 
